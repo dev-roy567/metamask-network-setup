@@ -1,0 +1,133 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111827;   /* slate-900 */
+  --muted: #4b5563; /* gray-600 */
+  --primary: #64748b; /* slate-500 (focus accent) */
+  --primary-2: #94a3b8; /* slate-400 */
+  --ok: #047857;    /* emerald-700 */
+  --error: #b91c1c; /* red-700 */
+  --card: #ffffff;
+  --border: #e5e7eb; /* gray-200 */
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 720px;
+  margin: 5vh auto;
+  padding: 24px 20px;
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 24px rgba(17,24,39,0.08);
+}
+
+h1 { margin: 0 0 8px; font-size: 1.6rem; }
+.lead { color: var(--muted); margin-top: 0; font-size: 1.05rem; margin-bottom: 12px; }
+
+.header {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  padding: 12px 16px;
+  border-radius: 14px;
+  position: relative;
+  border: 1px solid #bfc6ce; /* steel edge */
+  background-image:
+    linear-gradient(180deg, #f9fafb 0%, #e5e7eb 18%, #d1d5db 50%, #e5e7eb 82%, #f9fafb 100%),
+    radial-gradient(150% 60% at 50% -30%, rgba(255,255,255,.85), rgba(255,255,255,0) 60%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 -1px 0 rgba(0,0,0,.08),
+    0 8px 18px rgba(0,0,0,.08),
+    0 1px 2px rgba(0,0,0,0.06);
+  transition: transform .12s ease, box-shadow .2s ease, filter .2s ease, background .2s ease, border-color .2s ease;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,.35), rgba(255,255,255,0) 45%);
+  mix-blend-mode: screen;
+}
+.header #ctaLogo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: linear-gradient(180deg, #f8fafc 0%, #e5e7eb 100%);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .08s ease, filter .15s ease;
+}
+.header:hover {
+  transform: translateY(-1px);
+  border-color: #aeb6bf;
+  background-image:
+    linear-gradient(180deg, #ffffff 0%, #e7eaee 18%, #cfd3d8 50%, #e7eaee 82%, #ffffff 100%),
+    radial-gradient(150% 60% at 50% -30%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(0,0,0,.08),
+    0 12px 28px rgba(0,0,0,.12),
+    0 2px 4px rgba(0,0,0,0.06);
+}
+.header #ctaLogo:hover { filter: brightness(1.03); }
+.header #ctaLogo:active { transform: translateY(1px); }
+
+.header:active {
+  transform: translateY(1px);
+  background-image:
+    linear-gradient(180deg, #edf1f5 0%, #dfe3e7 100%),
+    radial-gradient(150% 60% at 50% -30%, rgba(255,255,255,.75), rgba(255,255,255,0) 60%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    inset 0 -1px 0 rgba(0,0,0,.1),
+    0 6px 14px rgba(0,0,0,.1),
+    0 1px 2px rgba(0,0,0,0.06);
+}
+
+.header:focus { outline: 2px solid var(--primary); outline-offset: 4px; border-radius: 12px; }
+
+/* Tighten title spacing inside the clickable header */
+.header h1 { margin: 0; }
+
+.primary {
+  background: var(--primary);
+  color: #001018;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .05s ease, filter .15s ease;
+}
+.primary:hover { filter: brightness(0.95); }
+.primary:active { transform: translateY(1px); }
+
+.status {
+  margin-top: 14px;
+  padding: 0;
+  color: var(--fg);
+  white-space: pre-line; /* support \n line breaks in status text */
+}
+.status.info { color: var(--muted); }
+.status.ok { color: var(--ok); }
+.status.error { color: var(--error); }
+
+.help { margin-top: 12px; color: var(--muted); }
+.help summary { cursor: pointer; }

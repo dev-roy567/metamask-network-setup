@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MetaMask Network Setup</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <main class="container">
+      <p class="lead">ボタンを押すと MetaMask にネットワーク設定を追加または更新します。</p>
+
+      <div id="ctaHeader" class="header" role="button" tabindex="0" aria-label="XANAChain を追加/更新">
+        <img
+          id="ctaLogo"
+          src="assets/xana-logo.png"
+          alt="XANAChain ロゴ"
+        />
+        <h1>XANAChain ネットワーク設定</h1>
+      </div>
+
+      <div id="status" role="status" aria-live="polite" class="status"></div>
+
+    </main>
+
+    <script src="src/main.js" defer></script>
+  </body>
+  </html>
